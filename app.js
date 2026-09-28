@@ -1,112 +1,154 @@
-const homeScreen = document.getElementById("home");
-const buyScreen = document.getElementById("buy");
-const accountScreen = document.getElementById("account");
-const gameTitle = document.getElementById("gameTitle");
-const plans = document.getElementById("plans");
-const notReady = document.getElementById("notReady");
-const backButton = document.getElementById("backButton");
-const accountBack = document.getElementById("accountBack");
+let selectedGame = "";
+let selectedPlan = "";
+let selectedPrice = "";
 
-const modal = document.getElementById("modal");
-const modalText = document.getElementById("modalText");
-const demoPay = document.getElementById("demoPay");
-const closeModal = document.getElementById("closeModal");
 
-const accountStatus = document.getElementById("accountStatus");
-const accountGame = document.getElementById("accountGame");
-const accountPlan = document.getElementById("accountPlan");
-const accountExpiry = document.getElementById("accountExpiry");
-
-let selectedGame = null;
-let selectedPlan = null;
-
-const availableGames = {
-  "Game VIP Arena of Valor x64": true,
-  "VIP Clash of Titans x64": false,
-  "VIP Garena Aov x64": false,
-  "VIP Garena Rov x64": false
-};
+/* HOME */
 
 function showHome() {
-  homeScreen.classList.remove("hidden");
-  buyScreen.classList.add("hidden");
-  accountScreen.classList.add("hidden");
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  document.getElementById("homeScreen").classList.remove("hidden");
+  document.getElementById("buyScreen").classList.add("hidden");
+  document.getElementById("accountScreen").classList.add("hidden");
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
 
-function showBuyScreen(game) {
+
+/* OPEN GAME */
+
+function openGame(game) {
+
   selectedGame = game;
-  gameTitle.textContent = game;
 
-  const available = availableGames[game] === true;
-  plans.classList.toggle("hidden", !available);
-  notReady.classList.toggle("hidden", available);
+  const title = document.getElementById("gameTitle");
 
-  homeScreen.classList.add("hidden");
-  accountScreen.classList.add("hidden");
-  buyScreen.classList.remove("hidden");
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  if (game === "Arena of Valor") {
+    title.textContent = "Game VIP Arena of Valor x64";
+  }
+
+  else if (game === "Clash of Titans") {
+    title.textContent = "Game VIP Clash of Titans x64";
+  }
+
+  else if (game === "Garena Aov") {
+    title.textContent = "Game VIP Garena Aov x64";
+  }
+
+  else if (game === "Garena Rov") {
+    title.textContent = "Game VIP Garena Rov x64";
+  }
+
+  document.getElementById("homeScreen").classList.add("hidden");
+  document.getElementById("accountScreen").classList.add("hidden");
+  document.getElementById("buyScreen").classList.remove("hidden");
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
 
-document.querySelectorAll(".game-button").forEach(button => {
-  button.addEventListener("click", () => {
-    showBuyScreen(button.dataset.game);
+
+/* ACCOUNT */
+
+function showAccount() {
+
+  document.getElementById("homeScreen").classList.add("hidden");
+  document.getElementById("buyScreen").classList.add("hidden");
+  document.getElementById("accountScreen").classList.remove("hidden");
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
   });
-});
+}
 
-backButton.addEventListener("click", showHome);
-accountBack.addEventListener("click", showHome);
 
-document.querySelector('nav a[href="#home"]').addEventListener("click", event => {
-  event.preventDefault();
-  showHome();
-});
+/* DEMO BUY */
 
-document.querySelector('nav a[href="#account"]').addEventListener("click", event => {
-  event.preventDefault();
-  homeScreen.classList.add("hidden");
-  buyScreen.classList.add("hidden");
-  accountScreen.classList.remove("hidden");
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+function demoBuy(plan, price) {
 
-document.querySelectorAll(".buy-button").forEach(button => {
-  button.addEventListener("click", () => {
-    selectedPlan = {
-      name: button.dataset.plan,
-      price: button.dataset.price
-    };
+  selectedPlan = plan;
+  selectedPrice = price;
 
-    modalText.textContent = `${selectedGame} — ${selectedPlan.name} for $${selectedPlan.price}.`;
-    modal.classList.remove("hidden");
-  });
-});
+  const modal = document.getElementById("modal");
+  const modalText = document.getElementById("modalText");
 
-closeModal.addEventListener("click", () => {
-  modal.classList.add("hidden");
-});
+  modalText.textContent =
+    `${selectedGame} — ${plan} — $${price}`;
 
-modal.addEventListener("click", event => {
-  if (event.target === modal) modal.classList.add("hidden");
-});
+  modal.classList.remove("hidden");
+}
 
-// DEMO ONLY: this does not process real money.
-demoPay.addEventListener("click", () => {
-  if (!selectedGame || !selectedPlan) return;
 
-  const days = selectedPlan.name.startsWith("30") ? 30 : 90;
+/* CLOSE MODAL */
+
+function closeModal() {
+  document.getElementById("modal").classList.add("hidden");
+}
+
+
+/* CONFIRM DEMO PURCHASE */
+
+function confirmPurchase() {
+
+  let days = selectedPlan === "30 Days" ? 30 : 90;
+
   const expiry = new Date();
-  expiry.setDate(expiry.getDate() + days);
 
-  accountStatus.textContent = "Demo Active";
-  accountStatus.style.color = "var(--success)";
-  accountGame.textContent = selectedGame;
-  accountPlan.textContent = selectedPlan.name;
-  accountExpiry.textContent = expiry.toLocaleDateString();
+  expiry.setDate(
+    expiry.getDate() + days
+  );
 
-  modal.classList.add("hidden");
-  accountScreen.classList.remove("hidden");
-  homeScreen.classList.add("hidden");
-  buyScreen.classList.add("hidden");
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+  document.getElementById("accountStatus").textContent =
+    "Demo Active";
+
+  document.getElementById("accountStatus").style.color =
+    "#15803d";
+
+  document.getElementById("accountGame").textContent =
+    selectedGame;
+
+  document.getElementById("accountPlan").textContent =
+    selectedPlan;
+
+  document.getElementById("accountExpiry").textContent =
+    expiry.toLocaleDateString();
+
+  const downloadButton =
+    document.getElementById("downloadButton");
+
+  downloadButton.disabled = false;
+  downloadButton.style.background = "#111827";
+  downloadButton.style.color = "#ffffff";
+  downloadButton.style.cursor = "pointer";
+
+  closeModal();
+
+  showAccount();
+}
+
+
+/* DOWNLOAD */
+
+document
+  .getElementById("downloadButton")
+  .addEventListener("click", function () {
+
+    if (this.disabled) return;
+
+    alert(
+      "Demo download button.\n\n" +
+      "The real APK download will be connected " +
+      "after the payment system is implemented."
+    );
+
+  });
+
+
+/* START */
+
+showHome();
