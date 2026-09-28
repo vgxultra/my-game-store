@@ -3,110 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="vG Game VIP - Arena of Valor x64">
-  <title>vG — Game VIP Arena of Valor x64</title>
+  <meta name="description" content="vG Store">
+  <title>vG Store</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="topbar">
-    <div class="brand">vG</div>
+    <a class="brand" href="#home" aria-label="vG Home">vG</a>
     <nav>
-      <a href="#game">Game</a>
+      <a href="#home">Game</a>
       <a href="#account">Account</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="badge">vG GAME VIP</div>
-      <h1>Game VIP<br>Arena of Valor x64</h1>
-      <p>Choose your access period and enjoy your vG Game VIP package.</p>
-      <a class="hero-button" href="#game">View Plans</a>
-    </section>
+    <!-- SCREEN 1: HOME -->
+    <section id="home" class="screen home-screen">
+      <div class="store-title">vG Store</div>
 
-    <section id="game" class="section">
-      <div class="section-title">
-        <span>GAME VIP</span>
-        <h2>Arena of Valor x64</h2>
-      </div>
-
-      <div class="plans">
-        <article class="plan-card">
-          <div class="plan-name">30 Days</div>
-          <div class="price">$1.99 <small>/ 30 days</small></div>
-          <ul>
-            <li>30 days access</li>
-            <li>Account download access</li>
-            <li>Purchase history</li>
-          </ul>
-          <button class="buy-button" data-plan="30 Days" data-days="30" data-price="1.99">
-            Buy 30 Days
-          </button>
-        </article>
-
-        <article class="plan-card featured">
-          <div class="popular">POPULAR</div>
-          <div class="plan-name">90 Days</div>
-          <div class="price">$3.99 <small>/ 90 days</small></div>
-          <ul>
-            <li>90 days access</li>
-            <li>Account download access</li>
-            <li>Purchase history</li>
-          </ul>
-          <button class="buy-button" data-plan="90 Days" data-days="90" data-price="3.99">
-            Buy 90 Days
-          </button>
-        </article>
-      </div>
-    </section>
-
-    <section id="account" class="section account-section">
-      <div class="section-title">
-        <span>ACCOUNT</span>
-        <h2>Your purchase</h2>
-      </div>
-
-      <div class="account-card">
-        <div class="account-row">
-          <span>Status</span>
-          <strong id="accountStatus">Not purchased</strong>
-        </div>
-        <div class="account-row">
-          <span>Game</span>
-          <strong id="accountGame">—</strong>
-        </div>
-        <div class="account-row">
-          <span>Plan</span>
-          <strong id="accountPlan">—</strong>
-        </div>
-        <div class="account-row">
-          <span>Expires</span>
-          <strong id="accountExpiry">—</strong>
-        </div>
-
-        <button id="downloadButton" class="download-button" disabled>
-          Download APK
+      <div class="game-list">
+        <button class="game-button" data-game="Game VIP Arena of Valor x64">
+          VIP Arena of Valor x64
         </button>
+        <button class="game-button" data-game="VIP Clash of Titans x64">
+          VIP Clash of Titans x64
+        </button>
+        <button class="game-button" data-game="VIP Garena Aov x64">
+          VIP Garena Aov x64
+        </button>
+        <button class="game-button" data-game="VIP Garena Rov x64">
+          VIP Garena Rov x64
+        </button>
+      </div>
+    </section>
 
-        <p class="note">
-          Demo checkout only. No real payment is processed in this version.
+    <!-- SCREEN 2: BUY -->
+    <section id="buy" class="screen buy-screen hidden">
+      <button id="backButton" class="back-button">← Back</button>
+
+      <div class="buy-card">
+        <div class="small-label">GAME</div>
+        <h1 id="gameTitle">Game VIP Arena of Valor x64</h1>
+
+        <div id="plans" class="plans">
+          <article class="plan-card">
+            <div class="plan-name">30 Days</div>
+            <div class="price">$1.99</div>
+            <button class="buy-button" data-plan="30 Days" data-price="1.99">
+              BUY
+            </button>
+          </article>
+
+          <article class="plan-card">
+            <div class="plan-name">90 Days</div>
+            <div class="price">$3.99</div>
+            <button class="buy-button" data-plan="90 Days" data-price="3.99">
+              BUY
+            </button>
+          </article>
+        </div>
+
+        <p id="notReady" class="not-ready hidden">
+          This game is not available for purchase yet.
         </p>
+      </div>
+    </section>
+
+    <!-- ACCOUNT -->
+    <section id="account" class="account-screen hidden">
+      <div class="account-card">
+        <h2>Account</h2>
+        <div class="account-row"><span>Status</span><strong id="accountStatus">Not purchased</strong></div>
+        <div class="account-row"><span>Game</span><strong id="accountGame">—</strong></div>
+        <div class="account-row"><span>Plan</span><strong id="accountPlan">—</strong></div>
+        <div class="account-row"><span>Expires</span><strong id="accountExpiry">—</strong></div>
+        <button id="accountBack" class="secondary-button">Back to Game</button>
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>© 2026 vG</p>
-  </footer>
+  <footer>© 2026 vG</footer>
 
+  <!-- DEMO CHECKOUT -->
   <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
     <div class="modal-box">
       <button id="closeModal" class="close" aria-label="Close">×</button>
-      <div class="modal-icon">🎮</div>
-      <h3 id="modalTitle">Purchase</h3>
+      <div class="modal-brand">vG</div>
+      <h2>Confirm Purchase</h2>
       <p id="modalText"></p>
       <button id="demoPay" class="modal-button">Continue</button>
-      <p class="demo-warning">Demo checkout — no real money is charged.</p>
+      <div class="demo-note">Demo checkout — no real payment is charged.</div>
     </div>
   </div>
 
