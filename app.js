@@ -3,48 +3,38 @@ let selectedPlan = "";
 let selectedPrice = "";
 
 
-
-/* =================================
-   HOME
-================================= */
+/* =========================
+   SHOW HOME
+========================= */
 
 function showHome() {
 
   document
     .getElementById("homeScreen")
-    .classList
-    .remove("hidden");
-
+    .classList.remove("hidden");
 
   document
     .getElementById("buyScreen")
-    .classList
-    .add("hidden");
-
+    .classList.add("hidden");
 
   document
     .getElementById("accountScreen")
-    .classList
-    .add("hidden");
-
+    .classList.add("hidden");
 
   window.scrollTo({
     top: 0,
     behavior: "smooth"
   });
-
 }
 
 
-
-/* =================================
+/* =========================
    OPEN GAME
-================================= */
+========================= */
 
 function openGame(game) {
 
   selectedGame = game;
-
 
   const title =
     document.getElementById("gameTitle");
@@ -55,96 +45,72 @@ function openGame(game) {
     title.textContent =
       "Game VIP Arena of Valor x64";
 
-  }
-
-
-  else if (game === "Clash of Titans") {
+  } else if (game === "Clash of Titans") {
 
     title.textContent =
       "Game VIP Clash of Titans x64";
 
-  }
-
-
-  else if (game === "Garena Aov") {
+  } else if (game === "Garena Aov") {
 
     title.textContent =
       "Game VIP Garena Aov x64";
 
-  }
-
-
-  else if (game === "Garena Rov") {
+  } else if (game === "Garena Rov") {
 
     title.textContent =
       "Game VIP Garena Rov x64";
-
   }
 
 
   document
     .getElementById("homeScreen")
-    .classList
-    .add("hidden");
-
+    .classList.add("hidden");
 
   document
     .getElementById("accountScreen")
-    .classList
-    .add("hidden");
-
+    .classList.add("hidden");
 
   document
     .getElementById("buyScreen")
-    .classList
-    .remove("hidden");
+    .classList.remove("hidden");
 
 
   window.scrollTo({
     top: 0,
     behavior: "smooth"
   });
-
 }
 
 
-
-/* =================================
+/* =========================
    ACCOUNT
-================================= */
+========================= */
 
 function showAccount() {
 
   document
     .getElementById("homeScreen")
-    .classList
-    .add("hidden");
-
+    .classList.add("hidden");
 
   document
     .getElementById("buyScreen")
-    .classList
-    .add("hidden");
-
+    .classList.add("hidden");
 
   document
     .getElementById("accountScreen")
-    .classList
-    .remove("hidden");
+    .classList.remove("hidden");
 
 
   window.scrollTo({
     top: 0,
     behavior: "smooth"
   });
-
 }
 
 
-
-/* =================================
+/* =========================
    DEMO BUY
-================================= */
+========================= */
 
 function demoBuy(plan, price) {
 
@@ -156,7 +122,6 @@ function demoBuy(plan, price) {
   const modal =
     document.getElementById("modal");
 
-
   const modalText =
     document.getElementById("modalText");
 
@@ -165,35 +130,29 @@ function demoBuy(plan, price) {
     `${selectedGame} — ${plan} — $${price}`;
 
 
-  modal.classList
-    .remove("hidden");
-
+  modal.classList.remove("hidden");
 }
 
 
-
-/* =================================
+/* =========================
    CLOSE MODAL
-================================= */
+========================= */
 
 function closeModal() {
 
   document
     .getElementById("modal")
-    .classList
-    .add("hidden");
-
+    .classList.add("hidden");
 }
 
 
-
-/* =================================
-   CONFIRM DEMO PURCHASE
-================================= */
+/* =========================
+   CONFIRM PURCHASE
+========================= */
 
 function confirmPurchase() {
 
-  let days =
+  const days =
     selectedPlan === "30 Days"
       ? 30
       : 90;
@@ -210,26 +169,22 @@ function confirmPurchase() {
 
   document
     .getElementById("accountStatus")
-    .textContent =
-      "Demo Active";
+    .textContent = "Demo Active";
 
 
   document
     .getElementById("accountStatus")
-    .style.color =
-      "#15803d";
+    .style.color = "#15803d";
 
 
   document
     .getElementById("accountGame")
-    .textContent =
-      selectedGame;
+    .textContent = selectedGame;
 
 
   document
     .getElementById("accountPlan")
-    .textContent =
-      selectedPlan;
+    .textContent = selectedPlan;
 
 
   document
@@ -238,24 +193,19 @@ function confirmPurchase() {
       expiry.toLocaleDateString();
 
 
-
   const downloadButton =
     document.getElementById(
       "downloadButton"
     );
 
 
-  downloadButton.disabled =
-    false;
-
+  downloadButton.disabled = false;
 
   downloadButton.style.background =
     "#111827";
 
-
   downloadButton.style.color =
     "#ffffff";
-
 
   downloadButton.style.cursor =
     "pointer";
@@ -263,16 +213,13 @@ function confirmPurchase() {
 
   closeModal();
 
-
   showAccount();
-
 }
 
 
-
-/* =================================
-   DOWNLOAD
-================================= */
+/* =========================
+   DOWNLOAD DEMO
+========================= */
 
 document
   .getElementById("downloadButton")
@@ -290,14 +237,12 @@ document
         "The real APK download will be connected " +
         "after the payment system is implemented."
       );
-
     }
   );
 
 
-
-/* =================================
+/* =========================
    START
-================================= */
+========================= */
 
 showHome();
