@@ -221,7 +221,10 @@ nav button:hover {
 ========================================================= */
 
 .game-content {
-  padding: 22px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
 .game-content h2 {
