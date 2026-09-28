@@ -275,7 +275,7 @@ nav button:hover {
 
   display: block;
 
-  object-fit: cover;
+  object-fit: contain;
 
   transition:
     transform .35s ease;
