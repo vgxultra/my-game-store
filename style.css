@@ -250,63 +250,160 @@ nav button {
 }
 
 /* =========================================================
-   BUY SCREEN — V1.1 STYLE
+   BUY SCREEN — ORIGINAL V1 STYLE
 ========================================================= */
 
 #buyScreen {
   min-height: calc(100vh - 70px);
-  padding: 24px 20px 70px;
+  padding: 20px 20px 70px;
 }
 
-/* Back button */
+/* Back */
 
 .back-button {
-  display: block;
-
-  margin: 0 auto;
-
   border: 0;
   background: transparent;
-
-  color: var(--muted);
-
+  color: #6b7280;
   font-size: 15px;
   font-weight: 700;
-
   cursor: pointer;
+  padding: 8px 0;
 }
 
-/* Buy header */
+/* Header */
 
 .buy-header {
   text-align: center;
-
-  padding: 38px 10px 34px;
+  padding: 32px 10px 35px;
 }
 
 .buy-brand {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 900;
-
-  margin-bottom: 15px;
+  margin-bottom: 12px;
+  opacity: .55;
 }
 
 .buy-header h1 {
   margin: 0;
-
-  font-size: clamp(27px, 7vw, 36px);
+  font-size: clamp(26px, 7vw, 34px);
   line-height: 1.15;
-
   font-weight: 900;
   letter-spacing: -1px;
 }
 
 .buy-header p {
-  margin: 11px 0 0;
+  margin: 12px 0 0;
+  color: #6b7280;
+  font-size: 14px;
+}
 
-  color: var(--muted);
+/* Plans */
+
+#plans {
+  width: min(560px, 100%);
+  margin: 0 auto;
+
+  display: grid;
+  gap: 18px;
+}
+
+/* Original simple plan */
+
+.plan-card {
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+
+  padding: 30px 24px;
+
+  text-align: center;
+
+  box-shadow: 0 10px 30px rgba(17, 24, 39, .06);
+}
+
+/* 30 Days / 90 Days */
+
+.plan-name {
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  color: #6b7280;
+}
+
+/* Big price */
+
+.price {
+  margin: 8px 0 22px;
+
+  font-size: 44px;
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: -1.5px;
+
+  color: #111827;
+}
+
+/* BUY */
+
+.buy-button {
+  width: 100%;
+
+  border: 0;
+  border-radius: 11px;
+
+  padding: 14px 18px;
+
+  background: #111827;
+  color: #ffffff;
 
   font-size: 14px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform .15s ease,
+    background .15s ease;
+}
+
+.buy-button:hover {
+  background: #1f2937;
+  transform: translateY(-1px);
+}
+
+.buy-button:active {
+  transform: translateY(0);
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+  #buyScreen {
+    padding: 18px 16px 60px;
+  }
+
+  .buy-header {
+    padding: 30px 8px 30px;
+  }
+
+  .buy-header h1 {
+    font-size: 28px;
+  }
+
+  .plan-card {
+    padding: 28px 20px;
+  }
+
+  .price {
+    font-size: 42px;
+  }
 }
 
 /* =========================
