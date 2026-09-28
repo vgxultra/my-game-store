@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
 
   <meta
@@ -16,9 +18,12 @@
   <title>vG Store</title>
 
   <link rel="stylesheet" href="style.css">
+
 </head>
 
+
 <body>
+
 
   <!-- =========================
        TOP BAR
@@ -33,36 +38,55 @@
       vG Store
     </div>
 
+
     <nav>
 
       <button onclick="showAccount()">
         Account
       </button>
+
     </nav>
 
   </header>
 
 
+
   <!-- =========================
-       HOME
+       MAIN
   ========================== -->
 
   <main>
 
+
+
+    <!-- =========================
+         HOME SCREEN
+    ========================== -->
+
     <section id="homeScreen">
+
+
+      <!-- Home title -->
 
       <div class="home-header">
 
-  <h1>
-    Game List
-  </h1>
+        <h1>
+          Game List
+        </h1>
 
-</div>
+      </div>
 
+
+
+      <!-- Game list -->
 
       <div class="game-grid">
 
-        <!-- Game 1 -->
+
+
+        <!-- =====================
+             GAME 1
+        ====================== -->
 
         <article class="game-card">
 
@@ -76,6 +100,7 @@
             <div class="image-overlay"></div>
 
           </div>
+
 
           <div class="game-content">
 
@@ -96,7 +121,10 @@
         </article>
 
 
-        <!-- Game 2 -->
+
+        <!-- =====================
+             GAME 2
+        ====================== -->
 
         <article class="game-card">
 
@@ -111,13 +139,13 @@
 
           </div>
 
+
           <div class="game-content">
 
             <h2>
               Clash of Titans (x64)
             </h2>
 
-            
 
             <button
               class="buy-game-button"
@@ -131,7 +159,10 @@
         </article>
 
 
-        <!-- Game 3 -->
+
+        <!-- =====================
+             GAME 3
+        ====================== -->
 
         <article class="game-card">
 
@@ -146,13 +177,13 @@
 
           </div>
 
+
           <div class="game-content">
 
             <h2>
               Garena Aov (x64)
             </h2>
 
-            
 
             <button
               class="buy-game-button"
@@ -166,158 +197,50 @@
         </article>
 
 
-        <!-- Game 4 -->
+
+        <!-- =====================
+             GAME 4
+        ====================== -->
 
         <article class="game-card">
 
           <div class="game-image">
 
             <img
-<!-- =========================
-     HOME
-========================== -->
+              src="https://i.pinimg.com/originals/7f/7a/04/7f7a04c780335a8905915699ed2721c2.jpg"
+              alt="Garena Rov"
+            >
 
-<main>
+            <div class="image-overlay"></div>
 
-  <section id="homeScreen">
-
-    <div class="home-header">
-
-      <h1>
-        Game List
-      </h1>
-
-    </div>
+          </div>
 
 
-    <div class="game-grid">
+          <div class="game-content">
 
-      <!-- Game 1 -->
-
-      <article class="game-card">
-
-        <div class="game-image">
-
-          <img
-            src="https://o.qoo-img.com/ggpht/1h6ybDTSF5ihGyJRcFOkRglBaOZ79K77mdsCmS8UZZ1fJTXRJxt4IEOaivOuIQ4D06GKVe92z9Yhg_WvcziCAw"
-            alt="Arena of Valor"
-          >
-
-          <div class="image-overlay"></div>
-
-        </div>
-
-        <div class="game-content">
-
-          <h2>Arena of Valor (x64)</h2>
-
-          <button
-            class="buy-game-button"
-            onclick="openGame('Arena of Valor')"
-          >
-            BUY
-          </button>
-
-        </div>
-
-      </article>
+            <h2>
+              Garena Rov (x64)
+            </h2>
 
 
-      <!-- Game 2 -->
+            <button
+              class="buy-game-button"
+              onclick="openGame('Garena Rov')"
+            >
+              BUY
+            </button>
 
-      <article class="game-card">
+          </div>
 
-        <div class="game-image">
-
-          <img
-            src="https://www.techusmanii.com/wp-content/uploads/2022/05/clash-of-titans-mod-apk.jpeg"
-            alt="Clash of Titans"
-          >
-
-          <div class="image-overlay"></div>
-
-        </div>
-
-        <div class="game-content">
-
-          <h2>Clash of Titans (x64)</h2>
-
-          <button
-            class="buy-game-button"
-            onclick="openGame('Clash of Titans')"
-          >
-            BUY
-          </button>
-
-        </div>
-
-      </article>
+        </article>
 
 
-      <!-- Game 3 -->
 
-      <article class="game-card">
+      </div>
 
-        <div class="game-image">
-
-          <img
-            src="https://play-lh.googleusercontent.com/deNjJKsYDJyG8EKnji-454Xi9Fb0sas6F6YhSV-1xhDY4EaFh0y51QhHFAi33obUTRY3p6UJ2pvjE4q_NkYm=w240-h480"
-            alt="Garena Aov"
-          >
-
-          <div class="image-overlay"></div>
-
-        </div>
-
-        <div class="game-content">
-
-          <h2>Garena Aov (x64)</h2>
-
-          <button
-            class="buy-game-button"
-            onclick="openGame('Garena Aov')"
-          >
-            BUY
-          </button>
-
-        </div>
-
-      </article>
+    </section>
 
 
-      <!-- Game 4 -->
-
-      <article class="game-card">
-
-        <div class="game-image">
-
-          <img
-            src="https://i.pinimg.com/originals/7f/7a/04/7f7a04c780335a8905915699ed2721c2.jpg"
-            alt="Garena Rov"
-          >
-
-          <div class="image-overlay"></div>
-
-        </div>
-
-        <div class="game-content">
-
-          <h2>Garena Rov (x64)</h2>
-
-          <button
-            class="buy-game-button"
-            onclick="openGame('Garena Rov')"
-          >
-            BUY
-          </button>
-
-        </div>
-
-      </article>
-
-    </div>
-
-  </section>
 
 
     <!-- =========================
@@ -329,6 +252,9 @@
       class="hidden"
     >
 
+
+      <!-- Back -->
+
       <button
         class="back-button"
         onclick="showHome()"
@@ -337,11 +263,15 @@
       </button>
 
 
+
+      <!-- Buy title -->
+
       <div class="buy-header">
 
         <div class="buy-brand">
           PLANS
         </div>
+
 
         <h1 id="gameTitle">
           VIP Arena of Valor x64
@@ -350,20 +280,35 @@
       </div>
 
 
+
+      <!-- Plans -->
+
       <div id="plans">
 
-        <!-- 30 Days -->
+
+
+        <!-- =====================
+             30 DAYS
+        ====================== -->
 
         <article class="plan-card">
+
 
           <div class="plan-name">
             30 Days
           </div>
 
+
           <div class="price">
+
             $1.99
-            <small>/ plan</small>
+
+            <small>
+              / plan
+            </small>
+
           </div>
+
 
           <ul>
 
@@ -381,6 +326,7 @@
 
           </ul>
 
+
           <button
             class="buy-button"
             onclick="demoBuy('30 Days', '1.99')"
@@ -388,25 +334,38 @@
             Buy 30 Days
           </button>
 
+
         </article>
 
 
-        <!-- 90 Days -->
+
+        <!-- =====================
+             90 DAYS
+        ====================== -->
 
         <article class="plan-card featured">
+
 
           <div class="popular">
             POPULAR
           </div>
 
+
           <div class="plan-name">
             90 Days
           </div>
 
+
           <div class="price">
+
             $3.99
-            <small>/ plan</small>
+
+            <small>
+              / plan
+            </small>
+
           </div>
+
 
           <ul>
 
@@ -424,6 +383,7 @@
 
           </ul>
 
+
           <button
             class="buy-button"
             onclick="demoBuy('90 Days', '3.99')"
@@ -431,21 +391,27 @@
             Buy 90 Days
           </button>
 
+
         </article>
+
+
 
       </div>
 
     </section>
 
 
+
+
     <!-- =========================
-         ACCOUNT
+         ACCOUNT SCREEN
     ========================== -->
 
     <section
       id="accountScreen"
       class="hidden"
     >
+
 
       <div class="account-header">
 
@@ -456,7 +422,11 @@
       </div>
 
 
+
       <div class="account-card">
+
+
+        <!-- Status -->
 
         <div class="account-row">
 
@@ -471,6 +441,9 @@
         </div>
 
 
+
+        <!-- Game -->
+
         <div class="account-row">
 
           <span>
@@ -483,6 +456,9 @@
 
         </div>
 
+
+
+        <!-- Plan -->
 
         <div class="account-row">
 
@@ -497,6 +473,9 @@
         </div>
 
 
+
+        <!-- Expiry -->
+
         <div class="account-row">
 
           <span>
@@ -510,6 +489,9 @@
         </div>
 
 
+
+        <!-- Download -->
+
         <button
           id="downloadButton"
           class="download-button"
@@ -518,15 +500,19 @@
           Download APK
         </button>
 
+
       </div>
 
     </section>
 
+
   </main>
 
 
+
+
   <!-- =========================
-       DEMO MODAL
+       DEMO PURCHASE MODAL
   ========================== -->
 
   <div
@@ -534,7 +520,11 @@
     class="modal hidden"
   >
 
+
     <div class="modal-box">
+
+
+      <!-- Close -->
 
       <button
         class="close"
@@ -544,15 +534,31 @@
         ×
       </button>
 
+
+
+      <!-- Icon -->
+
       <div class="modal-icon">
         💳
       </div>
+
+
+
+      <!-- Title -->
 
       <h2>
         Demo Purchase
       </h2>
 
+
+
+      <!-- Purchase information -->
+
       <p id="modalText"></p>
+
+
+
+      <!-- Continue -->
 
       <button
         class="modal-button"
@@ -561,21 +567,40 @@
         Continue
       </button>
 
+
+
+      <!-- Warning -->
+
       <p class="demo-warning">
         Demo checkout — no real money is charged.
       </p>
+
 
     </div>
 
   </div>
 
 
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
   <footer>
+
     © 2026 vG Store
+
   </footer>
 
 
+
+
+  <!-- JavaScript -->
+
   <script src="app.js"></script>
 
+
 </body>
+
 </html>
