@@ -3,55 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Simple game store with 30-day and 90-day plans.">
-  <title>My Game Store</title>
+  <meta name="description" content="vG Game VIP - Arena of Valor x64">
+  <title>vG — Game VIP Arena of Valor x64</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="topbar">
-    <div class="brand">My Game Store</div>
+    <div class="brand">vG</div>
     <nav>
-      <a href="#plans">Plans</a>
+      <a href="#game">Game</a>
       <a href="#account">Account</a>
     </nav>
   </header>
 
   <main>
     <section class="hero">
-      <div class="badge">Simple • Fast • Secure</div>
-      <h1>Choose your plan</h1>
-      <p>Purchase access and download your game from your account.</p>
-      <a class="hero-button" href="#plans">View Plans</a>
+      <div class="badge">vG GAME VIP</div>
+      <h1>Game VIP<br>Arena of Valor x64</h1>
+      <p>Choose your access period and enjoy your vG Game VIP package.</p>
+      <a class="hero-button" href="#game">View Plans</a>
     </section>
 
-    <section id="plans" class="section">
+    <section id="game" class="section">
       <div class="section-title">
-        <span>PLANS</span>
-        <h2>Pick what you need</h2>
+        <span>GAME VIP</span>
+        <h2>Arena of Valor x64</h2>
       </div>
 
       <div class="plans">
         <article class="plan-card">
           <div class="plan-name">30 Days</div>
-          <div class="price">$5.99 <small>/ plan</small></div>
+          <div class="price">$1.99 <small>/ 30 days</small></div>
           <ul>
             <li>30 days access</li>
             <li>Account download access</li>
             <li>Purchase history</li>
           </ul>
-          <button class="buy-button" data-plan="30 Days" data-price="5.99">Buy 30 Days</button>
+          <button class="buy-button" data-plan="30 Days" data-days="30" data-price="1.99">
+            Buy 30 Days
+          </button>
         </article>
 
         <article class="plan-card featured">
           <div class="popular">POPULAR</div>
           <div class="plan-name">90 Days</div>
-          <div class="price">$14.99 <small>/ plan</small></div>
+          <div class="price">$3.99 <small>/ 90 days</small></div>
           <ul>
             <li>90 days access</li>
             <li>Account download access</li>
             <li>Purchase history</li>
           </ul>
-          <button class="buy-button" data-plan="90 Days" data-price="14.99">Buy 90 Days</button>
+          <button class="buy-button" data-plan="90 Days" data-days="90" data-price="3.99">
+            Buy 90 Days
+          </button>
         </article>
       </div>
     </section>
@@ -68,6 +72,10 @@
           <strong id="accountStatus">Not purchased</strong>
         </div>
         <div class="account-row">
+          <span>Game</span>
+          <strong id="accountGame">—</strong>
+        </div>
+        <div class="account-row">
           <span>Plan</span>
           <strong id="accountPlan">—</strong>
         </div>
@@ -81,21 +89,20 @@
         </button>
 
         <p class="note">
-          The payment and download verification are demo-only in this Version 1.
-          Real payment verification will be connected through a backend later.
+          Demo checkout only. No real payment is processed in this version.
         </p>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2026 My Game Store</p>
+    <p>© 2026 vG</p>
   </footer>
 
   <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
     <div class="modal-box">
       <button id="closeModal" class="close" aria-label="Close">×</button>
-      <div class="modal-icon">💳</div>
+      <div class="modal-icon">🎮</div>
       <h3 id="modalTitle">Purchase</h3>
       <p id="modalText"></p>
       <button id="demoPay" class="modal-button">Continue</button>
