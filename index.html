@@ -2,446 +2,489 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <meta
     name="description"
     content="vG Game Store"
   >
 
-  <title>vG Store</title>
+  <title>vG Game Store</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="topbar">
+  <!-- =========================
+       TOP BAR
+  ========================== -->
 
-  <div class="brand" onclick="showHome()">
-    vG Store
-  </div>
+  <header class="topbar">
 
-  <nav>
-    <button onclick="showHome()">Game</button>
-    <button onclick="showAccount()">Account</button>
-  </nav>
+    <div
+      class="brand"
+      onclick="showHome()"
+    >
+      vG
+    </div>
 
-</header>
+    <nav>
+      <button onclick="showHome()">
+        Game
+      </button>
 
+      <button onclick="showAccount()">
+        Account
+      </button>
+    </nav>
 
-<main>
+  </header>
+
 
   <!-- =========================
        HOME
   ========================== -->
 
-  <section id="homeScreen">
+  <main>
 
-    <div class="home-header">      
+    <section id="homeScreen">
 
-      <h1>
-        Game List
-      </h1>
+      <div class="home-header">
 
-    </div>
-
-
-    <div class="game-grid">
-
-
-      <!-- GAME 1
-           Arena of Valor
-      -->
-
-      <article class="game-card">
-
-        <div class="game-image">
-
-          <img
-            src="https://o.qoo-img.com/ggpht/1h6ybDTSF5ihGyJRcFOkRglBaOZ79K77mdsCmS8UZZ1fJTXRJxt4IEOaivOuIQ4D06GKVe92z9Yhg_WvcziCAw"
-            alt="Arena of Valor"
-          >
-
-          <div class="image-overlay"></div>
-
+        <div class="home-brand">
+          vG
         </div>
 
+        <h1>
+          Game List
+        </h1>
 
-        <div class="game-content">
+        <p>
+          Choose your game
+        </p>
 
-          <h2>
-            VIP Arena of Valor x64
-          </h2>
+      </div>
 
-          <p>
-            Global
-          </p>
+
+      <div class="game-grid">
+
+        <!-- Game 1 -->
+
+        <article class="game-card">
+
+          <div class="game-image">
+
+            <img
+              src="https://o.qoo-img.com/ggpht/1h6ybDTSF5ihGyJRcFOkRglBaOZ79K77mdsCmS8UZZ1fJTXRJxt4IEOaivOuIQ4D06GKVe92z9Yhg_WvcziCAw"
+              alt="Arena of Valor"
+            >
+
+            <div class="image-overlay"></div>
+
+          </div>
+
+          <div class="game-content">
+
+            <h2>
+              Arena of Valor
+            </h2>
+
+            <p>
+              Game VIP
+            </p>
+
+            <button
+              class="buy-game-button"
+              onclick="openGame('Arena of Valor')"
+            >
+              BUY
+            </button>
+
+          </div>
+
+        </article>
+
+
+        <!-- Game 2 -->
+
+        <article class="game-card">
+
+          <div class="game-image">
+
+            <img
+              src="https://www.techusmanii.com/wp-content/uploads/2022/05/clash-of-titans-mod-apk.jpeg"
+              alt="Clash of Titans"
+            >
+
+            <div class="image-overlay"></div>
+
+          </div>
+
+          <div class="game-content">
+
+            <h2>
+              Clash of Titans
+            </h2>
+
+            <p>
+              Game VIP
+            </p>
+
+            <button
+              class="buy-game-button"
+              onclick="openGame('Clash of Titans')"
+            >
+              BUY
+            </button>
+
+          </div>
+
+        </article>
+
+
+        <!-- Game 3 -->
+
+        <article class="game-card">
+
+          <div class="game-image">
+
+            <img
+              src="https://play-lh.googleusercontent.com/deNjJKsYDJyG8EKnji-454Xi9Fb0sas6F6YhSV-1xhDY4EaFh0y51QhHFAi33obUTRY3p6UJ2pvjE4q_NkYm=w240-h480"
+              alt="Garena Aov"
+            >
+
+            <div class="image-overlay"></div>
+
+          </div>
+
+          <div class="game-content">
+
+            <h2>
+              Garena Aov
+            </h2>
+
+            <p>
+              Game VIP
+            </p>
+
+            <button
+              class="buy-game-button"
+              onclick="openGame('Garena Aov')"
+            >
+              BUY
+            </button>
+
+          </div>
+
+        </article>
+
+
+        <!-- Game 4 -->
+
+        <article class="game-card">
+
+          <div class="game-image">
+
+            <img
+              src="https://i.pinimg.com/originals/7f/7a/04/7f7a04c780335a8905915699ed2721c2.jpg"
+              alt="Garena Rov"
+            >
+
+            <div class="image-overlay"></div>
+
+          </div>
+
+          <div class="game-content">
+
+            <h2>
+              Garena Rov
+            </h2>
+
+            <p>
+              Game VIP
+            </p>
+
+            <button
+              class="buy-game-button"
+              onclick="openGame('Garena Rov')"
+            >
+              BUY
+            </button>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         BUY SCREEN — V1
+    ========================== -->
+
+    <section
+      id="buyScreen"
+      class="hidden"
+    >
+
+      <button
+        class="back-button"
+        onclick="showHome()"
+      >
+        ← Back
+      </button>
+
+
+      <div class="buy-header">
+
+        <div class="buy-brand">
+          PLANS
+        </div>
+
+        <h1 id="gameTitle">
+          Game VIP Arena of Valor x64
+        </h1>
+
+        <p>
+          Pick what you need
+        </p>
+
+      </div>
+
+
+      <div id="plans">
+
+        <!-- 30 Days -->
+
+        <article class="plan-card">
+
+          <div class="plan-name">
+            30 Days
+          </div>
+
+          <div class="price">
+            $5.99
+            <small>/ plan</small>
+          </div>
+
+          <ul>
+
+            <li>
+              30 days access
+            </li>
+
+            <li>
+              Account download access
+            </li>
+
+            <li>
+              Purchase history
+            </li>
+
+          </ul>
 
           <button
-            class="buy-game-button"
-            onclick="openGame('Arena of Valor')"
+            class="buy-button"
+            onclick="demoBuy('30 Days', '5.99')"
           >
-            BUY
+            Buy 30 Days
           </button>
 
-        </div>
-
-      </article>
+        </article>
 
 
+        <!-- 90 Days -->
 
-      <!-- GAME 2
-           Clash of Titans
-      -->
+        <article class="plan-card featured">
 
-      <article class="game-card">
+          <div class="popular">
+            POPULAR
+          </div>
 
-        <div class="game-image">
+          <div class="plan-name">
+            90 Days
+          </div>
 
-          <img
-            src="https://www.techusmanii.com/wp-content/uploads/2022/05/clash-of-titans-mod-apk.jpeg"
-            alt="Clash of Titans"
-          >
+          <div class="price">
+            $14.99
+            <small>/ plan</small>
+          </div>
 
-          <div class="image-overlay"></div>
+          <ul>
 
-        </div>
+            <li>
+              90 days access
+            </li>
 
+            <li>
+              Account download access
+            </li>
 
-        <div class="game-content">
+            <li>
+              Purchase history
+            </li>
 
-          <h2>
-            VIP Clash of Titans x64
-          </h2>
-
-          <p>
-            India
-          </p>
+          </ul>
 
           <button
-            class="buy-game-button"
-            onclick="openGame('Clash of Titans')"
+            class="buy-button"
+            onclick="demoBuy('90 Days', '14.99')"
           >
-            BUY
+            Buy 90 Days
           </button>
 
-        </div>
+        </article>
 
-      </article>
+      </div>
 
-
-
-      <!-- GAME 3
-           Garena AOV Indonesia
-      -->
-
-      <article class="game-card">
-
-        <div class="game-image">
-
-          <img
-            src="https://play-lh.googleusercontent.com/deNjJKsYDJyG8EKnji-454Xi9Fb0sas6F6YhSV-1xhDY4EaFh0y51QhHFAi33obUTRY3p6UJ2pvjE4q_NkYm=w240-h480"
-            alt="Garena AOV Indonesia"
-          >
-
-          <div class="image-overlay"></div>
-
-        </div>
+    </section>
 
 
-        <div class="game-content">
+    <!-- =========================
+         ACCOUNT
+    ========================== -->
 
-          <h2>
-            VIP Garena Aov x64
-          </h2>
+    <section
+      id="accountScreen"
+      class="hidden"
+    >
 
-          <p>
-            Indonesia
-          </p>
+      <div class="account-header">
 
-          <button
-            class="buy-game-button"
-            onclick="openGame('Garena Aov')"
-          >
-            BUY
-          </button>
+        <h1>
+          Your Purchase
+        </h1>
 
-        </div>
-
-      </article>
+      </div>
 
 
+      <div class="account-card">
 
-      <!-- GAME 4
-           Garena RoV Thailand
-      -->
+        <div class="account-row">
 
-      <article class="game-card">
+          <span>
+            Status
+          </span>
 
-        <div class="game-image">
-
-          <img
-            src="https://i.pinimg.com/originals/7f/7a/04/7f7a04c780335a8905915699ed2721c2.jpg"
-            alt="Garena RoV Thailand"
-          >
-
-          <div class="image-overlay"></div>
+          <strong id="accountStatus">
+            Not purchased
+          </strong>
 
         </div>
 
 
-        <div class="game-content">
+        <div class="account-row">
 
-          <h2>
-            VIP Garena Rov x64
-          </h2>
+          <span>
+            Game
+          </span>
 
-          <p>
-            Thailand
-          </p>
-
-          <button
-            class="buy-game-button"
-            onclick="openGame('Garena Rov')"
-          >
-            BUY
-          </button>
+          <strong id="accountGame">
+            —
+          </strong>
 
         </div>
 
-      </article>
+
+        <div class="account-row">
+
+          <span>
+            Plan
+          </span>
+
+          <strong id="accountPlan">
+            —
+          </strong>
+
+        </div>
 
 
-    </div>
+        <div class="account-row">
 
-  </section>
+          <span>
+            Expires
+          </span>
 
+          <strong id="accountExpiry">
+            —
+          </strong>
+
+        </div>
+
+
+        <button
+          id="downloadButton"
+          class="download-button"
+          disabled
+        >
+          Download APK
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
 
 
   <!-- =========================
-       BUY SCREEN
+       DEMO MODAL
   ========================== -->
 
-  <section id="buyScreen" class="hidden">
+  <div
+    id="modal"
+    class="modal hidden"
+  >
 
-    <button
-      class="back-button"
-      onclick="showHome()"
-    >
-      ← Back
-    </button>
+    <div class="modal-box">
 
+      <button
+        class="close"
+        onclick="closeModal()"
+        aria-label="Close"
+      >
+        ×
+      </button>
 
-    <div class="buy-header">
+      <div class="modal-icon">
+        💳
+      </div>
 
-      <div class="buy-brand">
-        
+      <h2>
+        Demo Purchase
+      </h2>
 
-      <h1 id="gameTitle">
-        VIP Arena of Valor x64
-      </h1>
+      <p id="modalText"></p>
 
-      <p>
-        Choose your plan
+      <button
+        class="modal-button"
+        onclick="confirmPurchase()"
+      >
+        Continue
+      </button>
+
+      <p class="demo-warning">
+        Demo checkout — no real money is charged.
       </p>
 
     </div>
 
-
-    <div id="plans">
-
-      <div class="plan-card">
-
-        <div class="plan-name">
-          30 Days
-        </div>
-
-        <div class="price">
-          $1.99
-        </div>
-
-        <button
-          class="buy-button"
-          onclick="demoBuy('30 Days', '1.99')"
-        >
-          BUY
-        </button>
-
-      </div>
-
-
-      <div class="plan-card">
-
-        <div class="plan-name">
-          90 Days
-        </div>
-
-        <div class="price">
-          $3.99
-        </div>
-
-        <button
-          class="buy-button"
-          onclick="demoBuy('90 Days', '3.99')"
-        >
-          BUY
-        </button>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       ACCOUNT
-  ========================== -->
-
-  <section id="accountScreen" class="hidden">
-
-    <div class="account-header">
-
-      <div class="buy-brand">
-        vG
-      </div>
-
-      <h1>
-        Account
-      </h1>
-
-    </div>
-
-
-    <div class="account-card">
-
-      <div class="account-row">
-
-        <span>
-          Status
-        </span>
-
-        <strong id="accountStatus">
-          Not purchased
-        </strong>
-
-      </div>
-
-
-      <div class="account-row">
-
-        <span>
-          Game
-        </span>
-
-        <strong id="accountGame">
-          —
-        </strong>
-
-      </div>
-
-
-      <div class="account-row">
-
-        <span>
-          Plan
-        </span>
-
-        <strong id="accountPlan">
-          —
-        </strong>
-
-      </div>
-
-
-      <div class="account-row">
-
-        <span>
-          Expires
-        </span>
-
-        <strong id="accountExpiry">
-          —
-        </strong>
-
-      </div>
-
-
-      <button
-        id="downloadButton"
-        class="download-button"
-        disabled
-      >
-        Download APK
-      </button>
-
-    </div>
-
-  </section>
-
-</main>
-
-
-
-<footer>
-  © 2026 vG
-</footer>
-
-
-
-<!-- =========================
-     DEMO CHECKOUT
-========================== -->
-
-<div
-  id="modal"
-  class="modal hidden"
->
-
-  <div class="modal-box">
-
-    <button
-      class="close"
-      onclick="closeModal()"
-    >
-      ×
-    </button>
-
-
-    <div class="modal-icon">
-      💳
-    </div>
-
-
-    <h2>
-      Purchase
-    </h2>
-
-
-    <p id="modalText"></p>
-
-
-    <button
-      class="modal-button"
-      onclick="confirmPurchase()"
-    >
-      Continue
-    </button>
-
-
-    <div class="demo-warning">
-      Demo checkout — no real money is charged.
-    </div>
-
   </div>
 
-</div>
+
+  <footer>
+    © 2026 vG Game Store
+  </footer>
 
 
-
-<script src="app.js"></script>
+  <script src="app.js"></script>
 
 </body>
 </html>
