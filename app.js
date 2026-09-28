@@ -4,6 +4,7 @@ const modalText = document.getElementById("modalText");
 const demoPay = document.getElementById("demoPay");
 const closeModal = document.getElementById("closeModal");
 const accountStatus = document.getElementById("accountStatus");
+const accountGame = document.getElementById("accountGame");
 const accountPlan = document.getElementById("accountPlan");
 const accountExpiry = document.getElementById("accountExpiry");
 const downloadButton = document.getElementById("downloadButton");
@@ -11,9 +12,13 @@ let selectedPlan = null;
 
 document.querySelectorAll(".buy-button").forEach(button => {
   button.addEventListener("click", () => {
-    selectedPlan = { name: button.dataset.plan, price: button.dataset.price };
+    selectedPlan = {
+      name: button.dataset.plan,
+      days: Number(button.dataset.days),
+      price: button.dataset.price
+    };
     modalTitle.textContent = `Buy ${selectedPlan.name}`;
-    modalText.textContent = "This Version 1 is a demo. The real payment provider will be connected later.";
+    modalText.textContent = `Game VIP Arena of Valor x64 — $${selectedPlan.price} for ${selectedPlan.days} days.`;
     modal.classList.remove("hidden");
   });
 });
@@ -25,11 +30,11 @@ modal.addEventListener("click", event => {
 
 demoPay.addEventListener("click", () => {
   if (!selectedPlan) return;
-  const days = selectedPlan.name.startsWith("30") ? 30 : 90;
   const expiry = new Date();
-  expiry.setDate(expiry.getDate() + days);
+  expiry.setDate(expiry.getDate() + selectedPlan.days);
   accountStatus.textContent = "Demo Active";
   accountStatus.style.color = "#15803d";
+  accountGame.textContent = "Arena of Valor x64";
   accountPlan.textContent = selectedPlan.name;
   accountExpiry.textContent = expiry.toLocaleDateString();
   downloadButton.disabled = false;
@@ -41,6 +46,7 @@ demoPay.addEventListener("click", () => {
 });
 
 downloadButton.addEventListener("click", () => {
-  if (downloadButton.disabled) return;
-  alert("Demo download button.\n\nThe real APK download will be connected after payment verification is implemented.");
+  if (!downloadButton.disabled) {
+    alert("Demo download button.\n\nThe real APK download will be connected after payment verification is implemented.");
+  }
 });
