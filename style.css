@@ -384,25 +384,248 @@ nav button {
 /* Mobile */
 
 @media (max-width: 700px) {
+/* =========================================================
+   BUY SCREEN — V1 PLANS DESIGN
+========================================================= */
+
+#buyScreen {
+  min-height: calc(100vh - 70px);
+  padding: 20px 20px 70px;
+  background: var(--bg);
+}
+
+.back-button {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 8px 0;
+}
+
+.buy-header {
+  text-align: center;
+  padding: 65px 20px 45px;
+}
+
+.buy-brand {
+  display: inline-block;
+
+  padding: 7px 12px;
+  border-radius: 999px;
+
+  background: var(--soft);
+  color: var(--accent);
+
+  font-size: 12px;
+  font-weight: 800;
+
+  margin-bottom: 18px;
+}
+
+.buy-header h1 {
+  margin: 0;
+
+  font-size: clamp(38px, 7vw, 52px);
+  line-height: 1.02;
+
+  letter-spacing: -2px;
+  font-weight: 900;
+}
+
+.buy-header p {
+  margin: 18px auto 0;
+
+  max-width: 560px;
+
+  color: var(--muted);
+
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Plans */
+
+#plans {
+  width: min(1050px, 100%);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+/* Plan cards */
+
+.plan-card {
+  position: relative;
+
+  background: var(--card);
+
+  border: 1px solid var(--border);
+  border-radius: 20px;
+
+  padding: 34px;
+
+  box-shadow:
+    0 12px 35px rgba(17,24,39,.06);
+
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    border-color .18s ease;
+}
+
+.plan-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 18px 45px rgba(17,24,39,.10);
+}
+
+/* Popular plan */
+
+.plan-card.featured {
+  border: 2px solid var(--dark);
+}
+
+.popular {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  background: var(--dark);
+  color: #fff;
+
+  padding: 6px 9px;
+
+  border-radius: 999px;
+
+  font-size: 10px;
+  font-weight: 900;
+}
+
+/* Plan name */
+
+.plan-name {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+/* Price */
+
+.price {
+  margin: 15px 0 22px;
+
+  font-size: 42px;
+
+  font-weight: 900;
+
+  letter-spacing: -1.5px;
+}
+
+.price small {
+  font-size: 13px;
+
+  color: var(--muted);
+
+  font-weight: 600;
+}
+
+/* Features */
+
+.plan-card ul {
+  list-style: none;
+
+  padding: 0;
+
+  margin: 0 0 28px;
+
+  color: var(--muted);
+
+  line-height: 2;
+}
+
+.plan-card li::before {
+  content: "✓";
+
+  color: var(--success);
+
+  font-weight: 900;
+
+  margin-right: 9px;
+}
+
+/* Buy button */
+
+.buy-button {
+  width: 100%;
+
+  padding: 15px;
+
+  border: 0;
+
+  border-radius: 12px;
+
+  background: var(--dark);
+
+  color: #fff;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform .15s ease,
+    background .15s ease;
+}
+
+.buy-button:hover {
+  transform: translateY(-1px);
+
+  background: var(--dark-hover);
+}
+
+.buy-button:active {
+  transform: translateY(0);
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
 
   #buyScreen {
-    padding: 18px 16px 60px;
+    padding: 15px 16px 60px;
   }
 
   .buy-header {
-    padding: 30px 8px 30px;
+    padding: 55px 20px 35px;
   }
 
   .buy-header h1 {
-    font-size: 28px;
+    font-size: 38px;
+  }
+
+  .buy-header p {
+    font-size: 15px;
+  }
+
+  #plans {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
   }
 
   .plan-card {
-    padding: 28px 20px;
-  }
-
-  .price {
-    font-size: 42px;
+    padding: 30px 24px;
   }
 }
 
