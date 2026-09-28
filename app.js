@@ -43,22 +43,22 @@ function openGame(game) {
   if (game === "Arena of Valor") {
 
     title.textContent =
-      "Game VIP Arena of Valor x64";
+      "VIP Arena of Valor x64";
 
   } else if (game === "Clash of Titans") {
 
     title.textContent =
-      "Game VIP Clash of Titans x64";
+      "VIP Clash of Titans x64";
 
   } else if (game === "Garena Aov") {
 
     title.textContent =
-      "Game VIP Garena Aov x64";
+      "VIP Garena Aov x64";
 
   } else if (game === "Garena Rov") {
 
     title.textContent =
-      "Game VIP Garena Rov x64";
+      "VIP Garena Rov x64";
   }
 
 
