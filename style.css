@@ -104,38 +104,15 @@ nav button:hover {
 
 .home-header {
   text-align: center;
-
   padding: 65px 20px 38px;
-}
-
-.home-brand {
-  font-size: 18px;
-  font-weight: 900;
-
-  margin-bottom: 14px;
-
-  opacity: .55;
 }
 
 .home-header h1 {
   margin: 0;
-
-  font-size:
-    clamp(36px, 8vw, 52px);
-
+  font-size: clamp(36px, 8vw, 52px);
   line-height: 1;
-
   font-weight: 900;
-
   letter-spacing: -2px;
-}
-
-.home-header p {
-  margin: 13px 0 0;
-
-  color: var(--muted);
-
-  font-size: 15px;
 }
 
 
